@@ -46,3 +46,16 @@ def number(n):
 def num_template(n):
     """Handles /number_template/<int:n>, Returns HTML / 404"""
     return RT('5-number.html', n=n)
+
+
+@app.route('/number_odd_or_even/<int:n>', strict_slashes=False)
+def even_or_odd(n):
+    """Handles /number_odd_or_even/<int:n>, Returns HTML / 404"""
+    def e_or_o(n):
+        """Determine whether n is even or odd"""
+        if n % 2 == 0:
+            return "even"
+        else:
+            return "odd"
+    condition = e_or_o(n)
+    return RT('6-number_odd_or_even.html', n=n, condition=condition)
