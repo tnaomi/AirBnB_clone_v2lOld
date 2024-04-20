@@ -27,4 +27,4 @@ def hbnb():
 @app.route('/c/<text>', strict_slashes=True)
 def c_txt(text):
     """Displays C and custom input text"""
-    return "{}".format(text).replace("_"," ")
+    return "{}".format(text).replace("_", " ")
