@@ -3,6 +3,7 @@
 Starts a Flask app; Runs at 0.0.0.0, at port=5000
 
 """
+from collections import defaultdict
 from flask import Flask as F, render_template as RT, app
 
 app = F(__name__)
@@ -26,4 +27,12 @@ def hbnb():
 @app.route('/c/<text>', strict_slashes=False)
 def c_txt(text):
     """Displays C and custom input text"""
-    return "C {}".format(text).replace("_", " ")
+    return "{}".format(text).replace("_", " ")
+
+
+@app.route('/python', defaults={"text":"is cool"}, strict_slashes=False)
+@app.route('/python/<text>', strict_slashes=False)
+def py_txt(text):
+    """Displays Python texting and custom Py routing with default page"""
+    return "Python {}".format(text).replace("_", " ")
+

@@ -1382,3 +1382,4 @@ virtual/lib/python3.12/site-packages/werkzeug-3.0.2.dist-info/WHEEL
 web_flask/__pycache__/0-hello_route.cpython-312.pyc
 web_flask/__pycache__/__init__.cpython-312.pyc
 web_flask/__pycache__/2-c_route.cpython-312.pyc
+web_flask/__pycache__/3-python_route.cpython-312.pyc
