@@ -3,8 +3,7 @@
 Starts a Flask app; Runs at 0.0.0.0, at port=5000
 
 """
-from collections import defaultdict
-from flask import Flask as F, render_template as RT, app
+from flask import Flask as F, app
 
 app = F(__name__)
 

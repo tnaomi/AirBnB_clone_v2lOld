@@ -4,7 +4,7 @@
 Returns:
         app: Runs at 0.0.0.0, at port=5000, Displays Hello HBNB!
 """
-from flask import Flask as F, render_template as RT, app
+from flask import Flask as F, app
 
 app = F(__name__)
 
