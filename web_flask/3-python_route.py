@@ -30,9 +30,8 @@ def c_txt(text):
     return "{}".format(text).replace("_", " ")
 
 
-@app.route('/python', defaults={"text":"is cool"}, strict_slashes=False)
+@app.route('/python', defaults={"text": "is cool"}, strict_slashes=False)
 @app.route('/python/<text>', strict_slashes=False)
 def py_txt(text):
     """Displays Python texting and custom Py routing with default page"""
     return "Python {}".format(text).replace("_", " ")
-
