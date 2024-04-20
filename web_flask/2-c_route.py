@@ -27,10 +27,4 @@ def hbnb():
 @app.route('/c/<text>', strict_slashes=True)
 def c_txt(text):
     """Displays C and custom input text"""
-    def strip_inp(text):
-        """Strip nonalpha characters from the route"""
-
-        empty = [" " if not isalpha(char) else char for char in text]
-        return "".join(str(el) for el in empty)
-
-    return f"C {strip_inp(text)}"
+    return "{}".format(text).replace("_"," ")
