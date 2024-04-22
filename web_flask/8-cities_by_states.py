@@ -9,6 +9,10 @@ from models.state import State
 
 app = F(__name__)
 
+if app == "__main__":
+    storage.reload()
+    app.run(host="0.0.0.0", port=5000)
+
 
 @app.teardown_appcontext
 def close_session(foo):
@@ -16,13 +20,8 @@ def close_session(foo):
     storage.close()
 
 
-@app.route('/states_list', strict_slashes=False)
+@app.route('/cities_by_states', strict_slashes=False)
 def states_list():
     """lists states from storage engine"""
     states = list(storage.all(State).values())
-    return RT('7-states_list.html', states=states)
-
-
-if app == "__main__":
-    storage.reload()
-    app.run(host="0.0.0.0", port=5000)
+    return RT('8-cities_by_states.html', states=states)
